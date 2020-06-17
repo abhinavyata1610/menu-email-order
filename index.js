@@ -11,16 +11,8 @@ app.use(express.static('src'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/get',function(req,res){
-    let msg ='test'
-    return res.send(msg);
-})
-app.get('/',function(req,res){
-    let msg ='test'
-    res.writeHead(200);
-    res.end();
-    return res.send(msg);
-})
+app.get('/', (req, res) => res.send('Hello World!'))
+
 
 app.post('/send-email', function (req, res) {
     console.log('THIS WORKS');
@@ -51,7 +43,7 @@ res.writeHead(200);
 res.end();
 });
 
-let server = app.listen(8081, function(){
+let server = app.listen(process.env.PORT || 5000, function(){
   let port = server.address().port;
   console.log("Server started at http://localhost:%s", port);
 });
