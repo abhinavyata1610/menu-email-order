@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/e8738ddc-a5bc-495d-9edc-7d1ee1053ca1/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/abhinav-menu-email-order",
+    "appService.deploySubpath": "."
+}
