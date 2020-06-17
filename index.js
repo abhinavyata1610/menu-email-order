@@ -30,7 +30,7 @@ let mailOptions = {
     // should be replaced with real recipient's account
     to: 'abhinavyata@gmail.com',
      subject: req.body.subject,
-     body: req.body.message
+     text: req.body.message
      
 };
 transporter.sendMail(mailOptions, (error, info) => {
