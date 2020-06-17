@@ -15,6 +15,12 @@ app.get('/get',function(req,res){
     let msg ='test'
     return res.send(msg);
 })
+app.get('/',function(req,res){
+    let msg ='test'
+    res.writeHead(200);
+    res.end();
+    return res.send(msg);
+})
 
 app.post('/send-email', function (req, res) {
     console.log('THIS WORKS');
