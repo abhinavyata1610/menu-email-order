@@ -1,10 +1,11 @@
 let express = require("express"),
     path = require('path'),
     nodeMailer = require('nodemailer'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cors = require('cors');
 
 let app = express();
-
+app.use(cors());
 app.use(express.static('src'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,13 +42,13 @@ app.post('/send-email', function(req, res) {
     res.writeHead(200);
     res.end();
 });
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", '*');
+//     res.header("Access-Control-Allow-Credentials", true);
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//     res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+//     next();
+// });
 
 let server = app.listen(process.env.PORT || 5000, function() {
     let port = server.address().port;
