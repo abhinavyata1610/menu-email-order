@@ -15,7 +15,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 
 app.post('/send-email', function(req, res) {
-    console.log('THIS WORKS');
+    console.log('Email', req);
     let transporter = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
